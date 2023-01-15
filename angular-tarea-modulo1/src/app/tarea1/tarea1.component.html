@@ -1,0 +1,32 @@
+<p><b>Elaborado por:</b> {{nombres}} {{apellidos}}</p>
+<div class="container content">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <span class="anchor" id="formLogin"></span>
+
+            <div class="card card-outline-secondary">
+                <div class="card-header">
+                    <h3 class="mb-0">Puntos a Evaluar</h3>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="punto">Punto</label>
+                            <input type="text" class="form-control" id="punto" placeholder="Ingresar punto a evaluar..." #puntoevaluar>
+                        </div>
+                        <button type="submit" class="btn btn-primary" (click)="guardar(puntoevaluar.value)">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr class="mb-5">
+    <div class="row">
+        <div class="card-header">
+            <h3 class="mb-0">Puntos a Evaluar</h3>
+        </div>
+        <ul class="list-group">
+            <app-punto-evaluar *ngFor="let p of puntos" [punto] = "p"></app-punto-evaluar>
+        </ul>
+    </div>
+</div>
